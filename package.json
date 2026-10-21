@@ -1,0 +1,20 @@
+{
+  "name": "cyberpunk-hud-v2",
+  "displayName": "Cyberpunk HUD V2",
+  "description": "Red HUD banners and character-creator record panels. Port of Nathan's Cyberpunk HUD V2 Obsidian theme.",
+  "version": "2.0.0",
+  "publisher": "nathan",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/Natkiio/cyberpunk-hud-v2" },
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cyberpunk HUD V2",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cyberpunk-hud-v2-color-theme.json"
+      }
+    ]
+  }
+}

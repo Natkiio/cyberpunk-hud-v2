@@ -1,0 +1,128 @@
+/* =========================================================
+   CYBERPUNK HUD V2 — VS Code extras (load via Apc Customize UI++)
+   Glow, scanlines, square corners and Michroma labels that a
+   color theme can't express. Delete any block to turn it off.
+   ========================================================= */
+
+:root {
+  --cp-red:       #ff1f4b;
+  --cp-red-glow:  rgba(255, 31, 75, 0.55);
+  --cp-mint:      #a9f2e6;
+  --cp-frame:     #8f9898;
+  --cp-frame-dim: #3c4444;
+  --cp-label:     #c4cccc;
+  --cp-label-font: 'Michroma', 'Eurostile', 'Bank Gothic', sans-serif;
+}
+
+/* Faint scanlines over the whole window */
+.monaco-workbench::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0 1px, transparent 1px 3px);
+}
+
+/* Square everything */
+.monaco-workbench .monaco-button,
+.monaco-workbench .monaco-inputbox,
+.monaco-workbench .quick-input-widget,
+.monaco-workbench .monaco-menu,
+.monaco-workbench .suggest-widget,
+.monaco-workbench .monaco-hover,
+.monaco-workbench .notification-toast,
+.monaco-workbench .badge-content,
+.monaco-workbench .monaco-count-badge,
+.monaco-workbench .codicon {
+  border-radius: 0 !important;
+}
+
+/* Tabs = bordered boxes; active one goes red */
+.monaco-workbench .tabs-container .tab .label-name {
+  font-family: var(--cp-label-font);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.monaco-workbench .tabs-container .tab.active {
+  outline: 1px solid var(--cp-red);
+  outline-offset: -1px;
+  box-shadow: 0 0 10px var(--cp-red-glow);
+}
+.monaco-workbench .tabs-container .tab.active .label-name {
+  text-shadow: 0 0 8px var(--cp-red-glow);
+}
+
+/* Segmented mint bar under the tab strip (the record card header) */
+.monaco-workbench .editor-group-container > .title {
+  position: relative;
+}
+.monaco-workbench .editor-group-container > .title::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 3px;
+  pointer-events: none;
+  z-index: 5;
+  background:
+    linear-gradient(90deg,
+      var(--cp-mint) 0 9%, transparent 9% 10.5%,
+      var(--cp-mint) 10.5% 24%, transparent 24% 24.6%,
+      var(--cp-mint) 24.6% 25.4%, transparent 25.4% 26%,
+      var(--cp-mint) 26% 38%, transparent 38% 38.8%,
+      var(--cp-mint) 38.8% 82%, transparent 82%) left / 100% 100% no-repeat,
+    repeating-linear-gradient(90deg,
+      var(--cp-mint) 0 2px, transparent 2px 3px, var(--cp-mint) 3px 6px, transparent 6px 8px)
+      right / 15% 100% no-repeat;
+  opacity: 0.85;
+}
+
+/* Section headers / panel titles = small wide-spaced labels */
+.monaco-workbench .pane-header h3.title,
+.monaco-workbench .composite.title h2,
+.monaco-workbench .panel .composite.title .action-label,
+.monaco-workbench .settings-editor .settings-group-title-label {
+  font-family: var(--cp-label-font) !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+}
+
+/* Selected explorer row = red bordered field with glow */
+.monaco-workbench .monaco-list-row.selected,
+.monaco-workbench .monaco-list:focus .monaco-list-row.focused {
+  box-shadow: inset 0 0 0 1px var(--cp-red), 0 0 8px var(--cp-red-glow);
+}
+
+/* Status bar = tiny red readout */
+.monaco-workbench .part.statusbar {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Cursor + inputs glow */
+.monaco-editor .cursors-layer .cursor {
+  box-shadow: 0 0 6px var(--cp-red-glow);
+}
+.monaco-workbench .monaco-inputbox.synthetic-focus,
+.monaco-workbench .quick-input-widget {
+  box-shadow: 0 0 10px var(--cp-red-glow) !important;
+}
+
+/* Buttons = labelled boxes */
+.monaco-workbench .monaco-button {
+  font-family: var(--cp-label-font);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Thin square scrollbars */
+.monaco-scrollable-element > .scrollbar > .slider {
+  border-radius: 0 !important;
+}
