@@ -5,10 +5,18 @@ VS Code port of the **Cyberpunk HUD V2** Obsidian theme from *The City of the Da
 Same palette: hot red `#ff1f4b` HUD accents, mint `#a9f2e6` readouts, near-black panels, gray frames.
 
 ## Install
+**One command** (macOS/Linux, from any folder):
+```sh
+curl -L -o /tmp/cyberpunk-hud-v2.vsix https://github.com/Natkiio/cyberpunk-hud-v2/releases/latest/download/cyberpunk-hud-v2-2.0.0.vsix && code --install-extension /tmp/cyberpunk-hud-v2.vsix
+```
+
+**Or by hand:**
 1. Download `cyberpunk-hud-v2-2.0.0.vsix` from the [latest release](https://github.com/Natkiio/cyberpunk-hud-v2/releases/latest).
-2. In VS Code: Extensions view → `…` menu → **Install from VSIX…** and pick the file
-   (or run `code --install-extension cyberpunk-hud-v2-2.0.0.vsix`).
-3. Command Palette → **Preferences: Color Theme** → **Cyberpunk HUD V2**.
+2. In VS Code: Extensions view → `…` menu → **Install from VSIX…** and pick the file.
+   On the command line, give the full path, e.g. `code --install-extension ~/Downloads/cyberpunk-hud-v2-2.0.0.vsix`
+   (a bare filename only works from the folder it's in).
+
+Then: Command Palette → **Preferences: Color Theme** → **Cyberpunk HUD V2**.
 
 ## Syntax mapping
 | Token | Color |
