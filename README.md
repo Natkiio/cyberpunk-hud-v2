@@ -5,10 +5,18 @@ VS Code port of the **Cyberpunk HUD V2** Obsidian theme from *The City of the Da
 Same palette: hot red `#ff1f4b` HUD accents, mint `#a9f2e6` readouts, near-black panels, gray frames.
 
 ## Install
-**One command** (macOS/Linux, from any folder):
+**One command**, from any folder.
+
+macOS / Linux:
 ```sh
 curl -L -o /tmp/cyberpunk-hud-v2.vsix https://github.com/Natkiio/cyberpunk-hud-v2/releases/latest/download/cyberpunk-hud-v2-2.0.0.vsix && code --install-extension /tmp/cyberpunk-hud-v2.vsix
 ```
+
+Windows (PowerShell):
+```powershell
+Invoke-WebRequest https://github.com/Natkiio/cyberpunk-hud-v2/releases/latest/download/cyberpunk-hud-v2-2.0.0.vsix -OutFile "$env:TEMP\cyberpunk-hud-v2.vsix"; code --install-extension "$env:TEMP\cyberpunk-hud-v2.vsix"
+```
+If `code` isn't recognised, use the by-hand steps below.
 
 **Or by hand:**
 1. Download `cyberpunk-hud-v2-2.0.0.vsix` from the [latest release](https://github.com/Natkiio/cyberpunk-hud-v2/releases/latest).
@@ -42,5 +50,6 @@ A color theme can't do glow or scanlines. `hud.css` adds them through the
 **Apc Customize UI++** extension:
 ```jsonc
 "apc.imports": ["file:///path/to/hud.css"]  // wherever you saved hud.css from this repo
+// Windows example: "file:///C:/Users/you/Documents/hud.css"
 ```
 Install the Michroma font (Google Fonts) for the label typeface.
